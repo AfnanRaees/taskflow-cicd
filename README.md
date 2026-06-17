@@ -18,7 +18,16 @@ that deploys automatically to Render.
 - **CI** (`.github/workflows/ci.yml`) — runs on a pull request targeting `develop`:
   checkout → Docker Hub login → build → tag (`latest` + short SHA) → push to Docker Hub.
 - **CD** (`.github/workflows/cd.yml`) — runs on a push to `develop` (PR merge):
-  checkout → uses the `development` environment → `curl` POST to the Render deploy hook → timestamped confirmation.
+  checkout → uses the `development` environment → `curl` POST to the deploy hook → timestamped confirmation.
+
+> **Deployment platform note:** The assignment specifies Render. Render's Docker
+> web service (and, as of this assignment, even its Static Site) now require a
+> credit card to create, which was not available to the team. The live site is
+> therefore deployed on **Netlify** (free, no card), which provides an equivalent
+> **build hook** matching the same `curl -X POST` CD pattern. The CD workflow and
+> the secret name (`RENDER_DEPLOY_HOOK_URL`) are unchanged; only the hook value
+> points at Netlify. CI still builds and pushes the Docker image to Docker Hub as
+> required. **This deviation should be confirmed with the instructor.**
 
 ## Secrets (created by Team Lead only)
 | Scope | Secret |

@@ -1,0 +1,4 @@
+# Treat Office documents as binary (no line-ending conversion / no text diff)
+*.docx binary
+*.doc  binary
+*.pdf  binary
