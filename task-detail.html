@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — Task Detail</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">TaskFlow</a>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="add-task.html">Add Task</a>
+      <a href="task-list.html">Task List</a>
+      <a href="task-detail.html" class="active">Task Detail</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Task Detail</h1>
+    <p>Full details of the selected task.</p>
+
+    <div class="detail">
+      <dl>
+        <dt>Title</dt>
+        <dd>Prepare project report</dd>
+
+        <dt>Description</dt>
+        <dd>Compile the end-of-sprint project report including CI/CD pipeline results and deployment notes.</dd>
+
+        <dt>Due Date</dt>
+        <dd>2026-06-20</dd>
+
+        <dt>Priority</dt>
+        <dd><span class="badge high">High</span></dd>
+
+        <dt>Status</dt>
+        <dd><span class="badge pending">Pending</span></dd>
+      </dl>
+
+      <div class="actions">
+        <button class="btn">Mark as Complete</button>
+        <button class="btn danger">Delete Task</button>
+        <a href="task-list.html" class="btn secondary">Back to List</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>TaskFlow &mdash; DevOps Fundamentals Assignment 04 (Spring 2026)</footer>
+</body>
+</html>
