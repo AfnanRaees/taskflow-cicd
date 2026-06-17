@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — Add Task</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">TaskFlow</a>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="add-task.html" class="active">Add Task</a>
+      <a href="task-list.html">Task List</a>
+      <a href="task-detail.html">Task Detail</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Add a New Task</h1>
+    <p>Fill in the details below to create a new task.</p>
+
+    <form action="task-list.html" method="get">
+      <label for="title">Task Title</label>
+      <input type="text" id="title" name="title" placeholder="e.g. Prepare project report" required />
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" placeholder="Add more details about this task..."></textarea>
+
+      <label for="due-date">Due Date</label>
+      <input type="date" id="due-date" name="due-date" required />
+
+      <label for="priority">Priority</label>
+      <select id="priority" name="priority">
+        <option value="high">High</option>
+        <option value="medium" selected>Medium</option>
+        <option value="low">Low</option>
+      </select>
+
+      <button type="submit" class="btn">Save Task</button>
+      <a href="index.html" class="btn secondary">Cancel</a>
+    </form>
+  </main>
+
+  <footer>TaskFlow &mdash; DevOps Fundamentals Assignment 04 (Spring 2026)</footer>
+</body>
+</html>
