@@ -1,0 +1,31 @@
+name: CD - Deploy to Render
+
+# Triggered by a push to "develop" (this happens automatically when a PR is merged).
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    name: Deploy TaskFlow to Render
+    runs-on: ubuntu-latest
+
+    # Declares the "development" environment so the environment-level secret
+    # RENDER_DEPLOY_HOOK_URL is made available to this job.
+    environment: development
+
+    steps:
+      # Step 1 - Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2 - Trigger the Render deploy hook via an HTTP POST request.
+      # NOTE: This job intentionally contains NO Docker build or push steps;
+      # building/pushing the image is the exclusive responsibility of CI.
+      - name: Trigger Render deploy
+        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+
+      # Step 3 - Output a timestamped deployment confirmation message.
+      - name: Confirm deployment
+        run: echo "Deployment triggered successfully at $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
