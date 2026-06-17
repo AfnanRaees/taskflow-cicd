@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — Task List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">TaskFlow</a>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="add-task.html">Add Task</a>
+      <a href="task-list.html" class="active">Task List</a>
+      <a href="task-detail.html">Task Detail</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>All Tasks</h1>
+    <p>Browse and filter every task in your workspace.</p>
+
+    <div class="filters">
+      <button class="btn secondary">All</button>
+      <button class="btn secondary">Pending</button>
+      <button class="btn secondary">Completed</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Due Date</th>
+          <th>Priority</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="task-detail.html">Prepare project report</a></td>
+          <td>2026-06-20</td>
+          <td><span class="badge high">High</span></td>
+          <td><span class="badge pending">Pending</span></td>
+        </tr>
+        <tr>
+          <td><a href="task-detail.html">Review pull requests</a></td>
+          <td>2026-06-18</td>
+          <td><span class="badge medium">Medium</span></td>
+          <td><span class="badge completed">Completed</span></td>
+        </tr>
+        <tr>
+          <td><a href="task-detail.html">Update documentation</a></td>
+          <td>2026-06-25</td>
+          <td><span class="badge low">Low</span></td>
+          <td><span class="badge pending">Pending</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>TaskFlow &mdash; DevOps Fundamentals Assignment 04 (Spring 2026)</footer>
+</body>
+</html>
